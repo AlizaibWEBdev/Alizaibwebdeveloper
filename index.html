@@ -33,6 +33,9 @@
         </header>
     </div>
     <aside class="side-menu" id="sideMenu">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div><p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">x</p></div>
+        </div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -121,7 +124,26 @@
         </div>
     </div>
 
+    <section class="certificates" id="certificates">
+        <h2>My Certificates</h2>
+        <br>
+        <br>
+        <div class="certificates-grid">
+            <!-- Example of certificate images -->
+            <img class="certificate" src="c2.jpg" alt="Certificate 2">
+            <img class="certificate" src="c3.jpg" alt="Certificate 2">
+            <img class="certificate" src="c4.jpg" alt="Certificate 3">
 
+
+            <!-- Add more certificates as needed -->
+        </div>
+        <br>
+        <div class="certificates-grid">
+            <img class="certificate" src="c1.jpg" alt="Certificate 4">
+
+            <img class="certificate" src="c5.jpg" alt="Certificate 5">
+        </div>
+    </section>
     <div class="banner-section">
         <div class="img">
             <img src="banner.png" alt="" style="max-width: 100%;">
@@ -194,28 +216,34 @@
             </div>
         </div>
     </section>
-    <section class="certificates" id="certificates">
-        <h2>My Certificates</h2>
-        <br>
-        <br>
-        <div class="certificates-grid">
-            <!-- Example of certificate images -->
-            <img class="certificate" src="c2.jpg" alt="Certificate 2">
-            <img class="certificate" src="c3.jpg" alt="Certificate 2">
-            <img class="certificate" src="c4.jpg" alt="Certificate 3">
+    <br>
+    <h2 style="text-align: center;">my expertise</h2>
+   <div class="expertise-wraper">
+     <section class="expertise-section">
 
-
-            <!-- Add more certificates as needed -->
+        <div class="card">
+          <img src="web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-.jpg" alt="Full-Stack Development" />
+          <h3>Full-Stack Development</h3>
+          <p>I build dynamic websites and applications with front-end and back-end expertise.</p>
         </div>
-        <br>
-        <div class="certificates-grid">
-            <img class="certificate" src="c1.jpg" alt="Certificate 4">
-
-            <img class="certificate" src="c5.jpg" alt="Certificate 5">
+        <div class="card">
+          <img src="flat-design-api-illustration_23-2149392284.jpg" alt="API Development" />
+          <h3>API Development</h3>
+          <p>Creating secure and scalable APIs to power your applications.</p>
         </div>
-    </section>
+        <div class="card">
+          <img src="gradient-ui-ux-background_23-2149052117.jpg" alt="UI/UX Design" />
+          <h3>UI/UX Design</h3>
+          <p>Designing intuitive and user-friendly interfaces for better user experiences.</p>
+        </div>
+      </section>
+   </div>
+      
+   
+    <br>
+    <br>
+    <h2 style="text-align: center;">Client Reviews</h2>
     <section class="reviews-section" id="reviews">
-        <h2>Client Reviews</h2>
 
         <a href="https://www.fiverr.com/alizaibwebdev" target="_blank" class="review-card">
             <div class="user-info">
