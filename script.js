@@ -4,6 +4,9 @@ const certificates = document.querySelectorAll(".certificate");
 const modalImage = document.getElementById("modalImage");
 const closeModal = document.getElementById("closeModal");
 
+
+
+
 certificates.forEach(function (cert) {
     cert.addEventListener("click", function () {
         modal.style.display = "flex";
@@ -120,6 +123,18 @@ var form = document.getElementById("my-form");
       status.innerHTML = "Oops! There was a problem submitting your form"
     });
   }
-  form.addEventListener("submit", handleSubmit)
+  form.addEventListener("submit", handleSubmit);
+
+
+  document.body.style.overflow="hidden";
+  window.addEventListener("DOMContentLoaded",()=>{
+   setTimeout(() => {
+    document.body.style.overflowY="auto";
+    document.getElementById("loader").style.transform="translateX(200vw)";
+   }, 3500);
+  })
+
+  
+
 
 
