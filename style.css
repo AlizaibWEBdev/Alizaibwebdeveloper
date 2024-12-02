@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
 
 
 * {
@@ -12,6 +13,10 @@
     font-variation-settings:
         "wdth" 100,
         "YTLC" 500;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .loader {
@@ -128,12 +133,27 @@
     -webkit-animation-delay: 0.2s;
     animation-delay: 0.2s;
 }
-#seo-expertise{
+
+#seo-expertise {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.text-center{
+
+.line- {
+    width: 5px;
+    background-color: #0077a6;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    left: 13px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -141,15 +161,16 @@
     max-width: 900px;
     justify-content: center;
 }
-.text-center img{
+
+.text-center img {
     width: 100%;
     border: 1px solid #0077a6;
-    filter:contrast(150%);
+    filter: contrast(150%);
     border-radius: 10px;
 }
 
-.text-center p{
-    width:90%;
+.text-center p {
+    width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -632,7 +653,7 @@ form button {
 
 .banner-section .img {
     position: relative;
-    width: 95%;
+    width: 90%;
 
     border-radius: 20px;
     position: relative;
@@ -850,9 +871,6 @@ form button {
     .about-image img {
         width: 500px;
 
-
-
-
     }
 
     .about-content .Visionary {
@@ -874,18 +892,53 @@ form button {
         text-align: left;
     }
 }
+.line- .profile .msg{
+    
+    position: absolute;
+    width: 250px;
+    border-radius: 20px;
+    clip-path: polygon(15px 0, 100% 0, 100% 100%, 15px 100%, 0 50%);
+    text-align: center;
+    left: 45px;
+     opacity: 0;
+   
+     transition: .30s;
+     visibility: hidden;
+bottom: -22px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.897);
+    
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+}
+@media (min-width: 900px) {
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    .line- {
+        left: 45px;
+    }
+   
+}
+@media only screen and (max-width:900px) {
+   .line- .profile{
+    width: 30px !important;
+    height: 30px !important;
+   }
+}   
+
+.line- .profile {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #0077a6;
+    border-radius: 50%;
+    background: url("./ame.png");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    transition: 0.40s;
+
+
 }
 
-html {
-    scroll-behavior: smooth;
-}
+
 
 .container {
     min-height: 100vh;
