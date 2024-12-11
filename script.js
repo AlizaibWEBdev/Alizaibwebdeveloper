@@ -191,3 +191,53 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("loader").style.transform = "translateX(200vw)";
 })
 
+const grid = document.querySelector('#about .grid');
+
+// Create 200 boxes dynamically
+let reach = 200;
+if (window.innerWidth < 1000) {
+  reach = 80;
+}
+
+/**
+ * Removes the "animate" class from the given indices
+ * @param {[number]} arr - The indices of boxes to remove animation from
+ */
+function removeus(arr) {
+  let boxes = document.getElementsByClassName("box");
+  arr.forEach((boxindex) => {
+    if (boxindex >= 0 && boxindex < boxes.length) {
+      boxes[boxindex].classList.remove("animate");
+    }
+  });
+}
+
+for (let i = 0; i < reach; i++) {
+  const box = document.createElement('div');
+  box.classList.add('box');
+  
+  box.addEventListener('mouseenter', () => {
+    let rowsize = reach == 200 ? 20 : 10; // Adjust rowsize based on 'reach'
+    
+    // Calculate neighboring indices
+    let nearelements = [i, i - 1, i + 1, i - rowsize, i + rowsize];
+    
+    let boxes = document.getElementsByClassName("box");
+
+    // Only add the "animate" class if the index is within bounds
+    nearelements.forEach((index) => {
+      if (index >= 0 && index < boxes.length) {
+        boxes[index].classList.add("animate");
+      }
+    });
+
+    // Remove "animate" class after 1 second
+    setTimeout(() => {
+      removeus(nearelements);
+    }, 1000);
+  });
+
+  grid.appendChild(box);
+}
+
+

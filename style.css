@@ -891,7 +891,46 @@ form button {
     .about-text {
         text-align: left;
     }
+    #about .grid{
+       
+        grid-template-columns: repeat(20, 1fr) !important   ;
+      
+       
+    }
 }
+#about .about-content div{
+    z-index: 999;
+    position: relative;
+}
+#about .grid{
+    position: absolute;
+    width: 100vw;
+    cursor: text;
+    height: 100vh;
+    display: grid;
+    gap:4px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+   
+}
+
+#about .grid .box{
+    transform: rotate(-1deg);
+   border: 1px solid #0077a623;
+    border-radius: 6px;
+    transition: 0.3s ease;
+
+    
+}
+
+
+#about .grid .box.animate {
+   border: 1px solid #0077a6;
+ }
+
+ 
+ 
+ 
 .line- .profile .msg{
     
     position: absolute;
