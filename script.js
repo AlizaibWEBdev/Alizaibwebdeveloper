@@ -64,9 +64,7 @@ function isInViewport(element) {
 
 function checkMilestones() {
   const milestones = document.querySelectorAll('.container ul li');
-  let profile = document.getElementById("profile-scroll")
-
-  profile.style.top = window.scrollY + (window.innerHeight / 2 - 200) + "px"
+  
 
   const cards = document.querySelectorAll(".card");
   const triggerPoint = window.innerHeight * 0.8;
@@ -133,111 +131,13 @@ form.addEventListener("submit", handleSubmit);
 
 
 
-const msgdiv = document.getElementById("msg");
-const messages = [
-  
-  ,
-  "Let's collaborate on your next big project—hire me now!",
-  "Need a custom website? I'm here to help you grow your business.",
-  "I'm passionate about crafting seamless user experiences.",
-  "I transform complex ideas into clean, functional websites.",
-  "I craft innovative, performance-driven websites to boost your brand.",
-  "Your next project deserves the best—let’s make it happen!",
-  "Need a stunning UI? I’ll create the perfect design for you.",
-  "I transform code into seamless, dynamic web experiences.",
-  "I bring clean, modern, and responsive websites to life.",
-  "I’m passionate about turning your business goals into code. Let’s chat!"
-];
-
-let start = 0; 
-
-function showmsg(msg) {
-  msgdiv.style.visibility = "visible"; 
-  msgdiv.style.opacity = 1; 
-  msgdiv.innerHTML = `<p>${msg}</p>`;
-  
-  
-  setTimeout(() => {
-    msgdiv.style.opacity = 0; 
-    setTimeout(() => {
-      msgdiv.style.visibility = "hidden"; 
-    }, 300); 
-  }, 5000); 
-}
-
-
-function cycleMessages() {
-  showmsg(messages[start]);
-  start = (start + 1) % messages.length; 
-}
-
-
-
-
 
 document.body.style.overflow = "hidden";
 window.addEventListener("DOMContentLoaded", () => {
   checkMilestones()
-  setTimeout(() => {
-    cycleMessages(); 
-    setInterval(cycleMessages, 10000); 
-    showmsg("I’m a problem-solver, creating  solutions for your business.");
-    
-  }, 1500); 
   
-  const lineElement = document.getElementById("line-");
-  lineElement.style.height = document.documentElement.offsetHeight - 95 + "px"; 
   document.body.style.overflowY = "auto";  
   document.getElementById("loader").style.transform = "translateX(200vw)";
 })
-
-const grid = document.querySelector('#about .grid');
-
-// Create 200 boxes dynamically
-let reach = 200;
-if (window.innerWidth < 1000) {
-  reach = 80;
-}
-
-/**
- * Removes the "animate" class from the given indices
- * @param {[number]} arr - The indices of boxes to remove animation from
- */
-function removeus(arr) {
-  let boxes = document.getElementsByClassName("box");
-  arr.forEach((boxindex) => {
-    if (boxindex >= 0 && boxindex < boxes.length) {
-      boxes[boxindex].classList.remove("animate");
-    }
-  });
-}
-
-for (let i = 0; i < reach; i++) {
-  const box = document.createElement('div');
-  box.classList.add('box');
-  
-  box.addEventListener('mouseenter', () => {
-    let rowsize = reach == 200 ? 20 : 10; // Adjust rowsize based on 'reach'
-    
-    // Calculate neighboring indices
-    let nearelements = [i, i - 1, i + 1, i - rowsize, i + rowsize];
-    
-    let boxes = document.getElementsByClassName("box");
-
-    // Only add the "animate" class if the index is within bounds
-    nearelements.forEach((index) => {
-      if (index >= 0 && index < boxes.length) {
-        boxes[index].classList.add("animate");
-      }
-    });
-
-    // Remove "animate" class after 1 second
-    setTimeout(() => {
-      removeus(nearelements);
-    }, 1000);
-  });
-
-  grid.appendChild(box);
-}
 
 

@@ -13,6 +13,7 @@
     font-variation-settings:
         "wdth" 100,
         "YTLC" 500;
+     
 }
 
 html {
@@ -262,9 +263,7 @@ body {
     backdrop-filter: blur(5px);
     border-radius: 30px;
     min-width: 300px;
-
-
-
+    z-index: 99999;
 
 }
 
@@ -378,6 +377,8 @@ html {
     left: 0;
     right: 0;
 }
+
+
 
 .menu-active {
     transform: translateX(0);
@@ -824,7 +825,7 @@ form button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    position: relative;
     gap: 2rem;
 
     min-height: 90vh;
@@ -852,6 +853,7 @@ form button {
 .about-image {
     border-bottom: 2px solid #8a2be2;
     align-self: center;
+
 }
 
 
@@ -891,42 +893,9 @@ form button {
     .about-text {
         text-align: left;
     }
-    #about .grid{
-       
-        grid-template-columns: repeat(20, 1fr) !important   ;
-      
-       
-    }
-}
-#about .about-content div{
-    z-index: 999;
-    position: relative;
-}
-#about .grid{
-    position: absolute;
-    width: 100vw;
-    cursor: text;
-    height: 100vh;
-    display: grid;
-    gap:4px;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(10, 1fr);
    
 }
 
-#about .grid .box{
-    transform: rotate(-1deg);
-   border: 1px solid #0077a623;
-    border-radius: 6px;
-    transition: 0.3s ease;
-
-    
-}
-
-
-#about .grid .box.animate {
-   border: 1px solid #0077a6;
- }
 
  
  
@@ -1102,8 +1071,65 @@ bottom: -22px;
         background-color: aqua;
     }
 }
+#projects {
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+
+#projects video{
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #0077a6;
+    
+}
+
+#projects .content{
+    width:90vw;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #0077a6;
+    align-self: flex-start;
+    text-align: start;
+    position: relative;
+    margin-bottom: 50px;
+    font-size: 18px;
+    background-color: #1e1e1e;
+}
+
+#projects .content .lines{
+    position: absolute;
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    border-top: 2px solid #0077a6;
+    border-right: 2px solid #0077a6;
+    bottom: -100px;
+    z-index: -1;
+    right:-100px;
+
+}
+
+#projects .video {
+    max-width: 900px;
+    border-radius: 15px;
+    width: 95vw;
+    transform: rotateX(10deg) rotateY(10deg);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 149, 255, 0.074); /* Add a shadow */
+}
 
 
+.center-{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .certificates {
     padding: 2rem;
     text-align: center;
